@@ -1,52 +1,189 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #f0f4f8, #d9e6f2);
+    color: #333;
+    margin: 0;
+    padding: 0;
 }
 
 .container {
     max-width: 800px;
-    margin: 50px auto;
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 60px auto;
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+
+.container::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    width: 120%;
+    height: 120%;
+    background: linear-gradient(135deg, rgba(130, 201, 30, 0.2), rgba(74, 171, 61, 0.2));
+    z-index: 0;
+    pointer-events: none;
+    transform: rotate(-5deg);
+    border-radius: 16px;
 }
 
 h1 {
-    text-align: center;
+    font-size: 2.5rem;
+    color: #444;
+    margin-bottom: 40px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    position: relative;
+    z-index: 1;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 form {
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
+    z-index: 1;
 }
 
-input {
-    margin: 10px 0;
-    padding: 5px;
+input[type="text"], input[type="number"] {
+    width: 100%;
+    max-width: 600px;
+    padding: 15px;
     font-size: 16px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    margin: 15px 0;
+    transition: all 0.3s ease;
+    background: #fafafa;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+input:focus {
+    border-color: #82c91e;
+    background-color: #fff;
+    box-shadow: 0 4px 20px rgba(130, 201, 30, 0.3);
+    outline: none;
 }
 
 button {
-    padding: 10px 20px;
+    padding: 14px 40px;
     font-size: 16px;
-    margin: 10px;
-    background-color: #007bff;
+    margin: 15px;
+    background-color: #82c91e;
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
     cursor: pointer;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 6px 20px rgba(130, 201, 30, 0.4);
+    transition: all 0.3s ease;
 }
 
 button:disabled {
-    background-color: #cccccc;
+    background-color: #adb5bd;
+    box-shadow: none;
+    filter: grayscale(0.5);
 }
 
 button:hover:enabled {
-    background-color: #0056b3;
+    background-color: #51a512;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(130, 201, 30, 0.6);
+}
+
+button:active:enabled {
+    background-color: #409a0e;
+    transform: translateY(0);
+    box-shadow: 0 5px 15px rgba(130, 201, 30, 0.3);
 }
 
 #potsSection {
+    margin-top: 30px;
+    width: 100%;
+    max-width: 700px;
+    position: relative;
+    z-index: 1;
+}
+
+#potsSection h2 {
+    font-size: 1.8rem;
+    color: #4aab3d;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+#potsSection p {
+    font-size: 1.1rem;
+    color: #6c757d;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.pot {
+    background-color: #f1f8e9;
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(130, 201, 30, 0.15);
+}
+
+.pot h3 {
+    color: #4aab3d;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.pot ul {
+    list-style: none;
+    padding: 0;
+}
+
+.pot ul li {
+    padding: 8px;
+    font-size: 1rem;
+    background-color: #fff;
+    margin-bottom: 8px;
+    border-radius: 5px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+    transition: all 0.2s ease;
+}
+
+.pot ul li:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(130, 201, 30, 0.2);
+}
+
+#drawRecordTable {
+    width: 100%;
+    max-width: 700px;
+    margin: 20px 0;
+    border-collapse: collapse;
+}
+
+#drawRecordTable th, #drawRecordTable td {
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+#drawRecordTable th {
+    background-color: #82c91e;
+    color: white;
+    font-weight: bold;
+}
+
+#drawRecordTable td {
+    background-color: #fafafa;
+}
+
+#sortTableButton {
     margin-top: 20px;
 }
